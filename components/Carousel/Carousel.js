@@ -60,27 +60,34 @@ function createCarousel(){
 
   imageArray = [ carouselimage0, carouselimage1, carouselimage2, carouselimage3 ]
   
-  let i = 0 
-
+  let i = 0
+  imageArray[i].style.display = 'block'
+  
   function nextSlide () { 
-    imageArray[i].style.display = 'block';
+    imageArray[i].style.display = 'none'
+    
     if (i < imageArray.length) {
       i = i + 1; 
     }
     else {
       i = 0 
     }
-    
+
+    imageArray[i].style.display = 'block';  
   }
 
   function previousSlide() {
-    imageArray[i].style.display = 'block';
-    if (i > imageArray.length) {
+
+    imageArray[i].style.display = 'none'    
+
+    if (i > 0) {
       i = i - 1; 
     }
     else {
-      i = 0 
+      i = 3 
     }
+
+    imageArray[i].style.display = 'block';
   }
   
 
