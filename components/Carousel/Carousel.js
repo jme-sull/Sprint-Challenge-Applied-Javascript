@@ -63,16 +63,16 @@ function createCarousel(){
   let i = 0
   imageArray[i].style.display = 'block'
   
+  
   function nextSlide () { 
     imageArray[i].style.display = 'none'
     
-    if (i < imageArray.length) {
+    if (i < 3) {
       i = i + 1; 
     }
     else {
       i = 0 
     }
-
     imageArray[i].style.display = 'block';  
   }
 
