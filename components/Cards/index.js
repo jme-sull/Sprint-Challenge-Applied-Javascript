@@ -18,3 +18,82 @@
 // </div>
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
+
+axios.get('https://lambda-times-backend.herokuapp.com/articles').then(response => {
+    console.log(response)
+})
+
+function createCard (articleInfo) {
+    
+    const { headline, authorPhoto, authorName } = articleInfo
+    
+    //create elements
+    const card = document.createElement('div')
+    const cardHeadline = document.createElement('div')
+    const cardAuthorContainer = document.createElement('div')
+    const cardImageContainer = document.createElement('div')
+    const cardImage = document.createElement('img')
+    const cardAuthorName = document.createElement('span')
+
+    //assemble
+
+    card.appendChild(cardHeadline)
+    card.appendChild(cardAuthorContainer)
+    cardAuthorContainer.appendChild(cardImageContainer)
+    cardImageContainer.appendChild(cardImage)
+    cardAuthorContainer.appendChild(cardAuthorName)
+
+    //add class
+    
+    card.classList.add('card')
+    cardHeadline.classList.add('headline')
+    cardAuthorContainer.classList.add('author')
+    cardImageContainer.classList.add('img-container')
+
+    //add data 
+
+    cardHeadline.textContent = headline
+    cardImage.src = authorPhoto
+    cardAuthorName.textContent = authorName
+
+    console.log(card)
+
+    return card
+}
+
+
+//
+
+
+axios.get('https://lambda-times-backend.herokuapp.com/articles').then(response => {
+    const bootstrap = response.data.articles.bootstrap
+    bootstrap.forEach(item => {
+        document.querySelector('.cards-container').appendChild(createCard(item));
+    })  
+
+    const javascript = response.data.articles.javascript
+    javascript.forEach(item => {
+        document.querySelector('.cards-container').appendChild(createCard(item));
+    }) 
+    
+    const jquery = response.data.articles.jquery
+    jquery.forEach(item => {
+        document.querySelector('.cards-container').appendChild(createCard(item));
+    }) 
+
+    const technology = response.data.articles.technology
+    technology.forEach(item => {
+        document.querySelector('.cards-container').appendChild(createCard(item));
+    }) 
+
+    const node = response.data.articles.node
+    node.forEach(item => {
+        document.querySelector('.cards-container').appendChild(createCard(item));
+    }) 
+
+    })
+    
+
+
+
+
