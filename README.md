@@ -30,13 +30,22 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+DOM stands for Document Object Model. It is an object representation of an HTML page that acts as an API to allow us to manipulate the webpage 
+
 2. What is an event?
+
+An event is a user interaction with the web page. 
 
 3. What is an event listener?
 
+An event listener is a method added to an element which waits for a specifc user action and then triggers a callback function when the action occurs. 
+
 4. Why would we convert a NodeList into an Array?
 
+We might convert a NodeList into an array if we wanted access to array methods other than .ForEach().
+
 5. What is a component?
+A component is a reuseable function that takes data and returns a peice of UI 
 
 ### Git Set up
 
@@ -44,6 +53,8 @@ Edit this document to include your answers after each question. Make sure to lea
 * [ ] Clone the forked project into a directory on your machine
 * [ ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
 * [ ] You are now ready to build this project with your preferred IDE
+
+
 
 ## Minimum Viable Product
 
@@ -56,6 +67,9 @@ Your finished project must include all of the following requirements:
 * [ ] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
 
 * [ ] Following the instructions in the `Cards/index.js` file, create individual Cards components.
+
+
+
 
 ## Stretch Problems
 
